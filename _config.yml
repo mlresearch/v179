@@ -32,7 +32,7 @@ editor:
 title: Proceedings of Machine Learning Research
 description: |
   Proceedings of the Eleventh Symposium on Conformal and Probabilistic Prediction with Applications
-    Held in Online on 24-26 August 2022
+    Held in Brighton, UK on 24-26 August 2022
 
   Published as Volume 179 by the Proceedings of Machine Learning Research on 30 August 2022.
 
@@ -78,7 +78,7 @@ email: ''
 conference:
   name: Conformal and Probabilistic Prediction with Applications
   url:
-  location: Online
+  location: Brighton, UK
   dates:
   - 2022-08-24
   - 2022-08-25
