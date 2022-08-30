@@ -1,0 +1,391 @@
+@Proceedings{COPA-2022,
+  booktitle = {Proceedings of the Eleventh Symposium on Conformal and Probabilistic Prediction with Applications},
+  name = {Conformal and Probabilistic Prediction with Applications},
+  shortname = {COPA},
+  editor = {Johansson, Ulf and Bostr\"{o}m, Henrik and  An Nguyen, Khuong and Luo, Zhiyuan and Carlsson, Lars},
+  volume = {179},
+  year = {2022},
+  start = {2022-08-24},
+  end = {2022-08-26},
+  url = {https://copa-conference.com/},
+  address = {Online},
+  published = {2022-08-30},
+  location = {Brighton, UK}
+}
+
+
+%% PREFACE %%
+% 3 pages
+@InProceedings{johansson22a,
+title = {Preface},
+author = {Johansson, Ulf and Bostr\"{o}m, Henrik and An Nguyen, Khuong and Luo, Zhiyuan and Carlsson, Lars},
+pages = {1--3},
+abstract = {},
+}
+
+%% GROUP 1 Implementations - 2 papers %%
+
+% 1 - 1
+%20 pages
+@InProceedings{lofstrom22,
+ title = {Tutorial for using conformal prediction in KNIME},
+author = { L\"{o}fstr\"{o}m, Tuwe and Ryasik, Artem and Johansson, Ulf},
+ pages = { 4--23},
+ abstract = {KNIME is an end-to-end software platform for data science with an open source analytics platform for creating solutions and a commercial server solution for productionization. Redfield have previously developed nodes for conformal classification in KNIME. We introduce an extended conformal prediction package with added support for conformal regression.  The conformal prediction package include class-conditional conformal classification, conformal regression and normalized conformal regression. The updated package also includes several new and updated nodes that focus on ease-of-use. This paper provide an introduction to various use cases for both simplified and advanced use as well as experiments to prove validity and showcase functionality. All examples are publicly available and the package is available through KNIME's official software channels.  }
+}
+
+%1 - 2
+%18 pages
+@InProceedings{bostrom22,
+title = {crepes: a Python Package for Generating Conformal Regressors and Predictive Systems},
+author = {Bostr\"{o}m, Henrik},
+pages = {24--41},
+abstract = {The recently released Python package crepes can be used to generate both conformal regressors, which transform point predictions into prediction intervals for specified levels of confidence, and conformal predictive systems, which transform the point predictions into cumulative distribution functions (conformal predictive distributions). The \texttt{crepes} package implements standard, normalized and Mondrian conformal regressors and predictive systems, and is completely model-agnostic, using only the residuals for the calibration instances, possibly together with difficulty estimates and Mondrian categories as input,
+when forming the conformal regressors and predictive systems. This allows the user to easily incorporate and evaluate novel difficulty estimates and ways of forming Mondrian categories, as well as combinations thereof. Examples from using the package are given, illustrating how to incorporate some standard options for difficulty estimation, forming Mondrian categories and the use of out-of-bag predictions for calibration, through helper functions defined in a separate module, called \texttt{crepes.fillings}. The relation to other software packages for conformal regression is also pointed out.}
+}
+
+
+%% GROUP2 Venn prediction - 3 papers %%
+%2 - 1
+%13 pages
+@InProceedings{alkhatib22,
+title = {Assessing Explanation Quality by Venn Prediction},
+author ={Alkhatib, Amr and Bostr\"{o}m, Henrik and Johansson, Ulf},
+pages = {42--54},
+abstract = { Rules output by explainable machine learning techniques naturally come with a degree of uncertainty, as the complex functionality of the underlying black-box model often can be difficult to approximate by a single, interpretable rule. However, the uncertainty of these approximations is not properly quantified by current explanatory techniques. The use of Venn prediction is here proposed and investigated as a means to quantify the uncertainty of the explanations and thereby also allow for competing explanation techniques to be evaluated with respect to their relative uncertainty. A number of metrics of rule explanation quality based on uncertainty are proposed and discussed, including metrics that capture the tendency of the explanations to predict the correct outcome of a black-box model on new instances, how informative (tight) the produced intervals are, and how certain a rule is when predicting one class. An empirical investigation is presented, in which explanations produced by the state-of-the-art technique Anchors are compared to explanatory rules obtained from association rule mining. The results suggest that the association rule mining approach may provide explanations with less uncertainty towards the correct label, as predicted by the black-box model, compared to Anchors. The results also show that the explanatory rules obtained through association rule mining result in tighter intervals and are closer to either one or zero compared to Anchors, i.e., they are more certain towards a specific class label.  }
+}
+
+%2 - 2
+%17 pages
+@InProceedings{giovannotti22,
+title = { Calibration of Natural Language Understanding Models with Venn--ABERS Predictors},
+author = {Giovannotti, Patrizio},
+pages = {55--71},
+abstract = {Transformers, currently the state-of-the-art in natural language understanding (NLU) tasks,
+are prone to generate uncalibrated predictions or extreme probabilities, making the process of taking different decisions based on their output relatively difficult. In this paper
+we propose to build several inductive Venn--ABERS predictors (IVAP), which are guaranteed to be well calibrated under minimal assumptions, based on a selection of pre-trained transformers. We test their performance over a set of diverse NLU tasks and show that they are capable of producing well-calibrated probabilistic predictions that are uniformly spread over the [0,1] interval -- all while retaining the original model�s predictive accuracy.  }
+}
+
+%2 - 3
+%20 pages
+@InProceedings{johansson22b,
+title = {Well-Calibrated Rule Extractors},
+author = {Johansson, Ulf and L\"{o}fstr\"{o}m, Tuwe and St{\aa}hl, Niclas},
+pages = {72--91},
+abstract = {
+While explainability is widely considered necessary for trustworthy predictive models, most explanation modules give only a limited understanding of the reasoning behind the predictions. In pedagogical rule extraction, an opaque model is approximated with a transparent model induced using original training instances, but with the predictions from the opaque
+model as targets. The result is an interpretable model revealing the exact reasoning used
+for every possible prediction. The pedagogical approach can be applied to any opaque
+model and use any learning algorithm producing transparent models as the actual rule extractor. Unfortunately, even if the extracted model is induced to mimic the opaque, test set fidelity may still be poor, thus clearly limiting the value of using the extracted model for explanations and analyses. In this paper, it is suggested to alleviate this problem by extracting probabilistic predictors with well-calibrated fitness estimates. For the calibration, Venn-Abers with its unique validity guarantees, is employed. Using a setup where
+decision trees are extracted from MLP neural networks, the suggested approach is first
+demonstrated in detail on one real-world data set. After that, a large-scale empirical evaluation using 25 publicly available benchmark data sets is presented. The results show that
+the method indeed extracts interpretable models with well-calibrated fitness estimates, i.e.,
+the extracted model can be used for explaining the opaque. Specifically, in the setup used, every leaf in a decision tree contains a label and a well-calibrated probability interval for the fidelity. Consequently, a user could, in addition to obtaining explanations of individual predictions, find the parts of feature space where the decision tree is a good approximation of the MLP and not. In fact, using the sizes of the probability intervals, the models also provide an indication of how certain individual fitness estimates are.  }
+}
+
+%% group 3 Real-world applications - 6 papers %%
+% 3 - 1
+%17 pages
+@InProceedings{hernandez-hernandez22,
+title = {Conformal prediction of small-molecule drug resistance in cancer cell lines},
+author = {Hern\'{a}ndez-Hern\'{a}ndez, Saiveth and  Vishwakarma, Sachin and Ballester, Pedro},
+pages = {92--108},
+abstract = {Drug design is a critical step in the drug discovery process, where promising drug
+molecules are engineered to be later evaluated preclinically and perhaps clinically. Phenotypic drug design has again gained traction. Cancer cell lines, a frequently adopted {\it in vitro}
+model for phenotype drug design, can be used to evaluate the drug resistance level (lack of
+inhibitory activity, for example) of a large number of molecules, and discard those that are
+the least likely to become drug candidates. By reusing these datasets, supervised learning models have been built to predict drug resistance on cancer cell lines. Usually, these
+methods have assigned reliability to the whole model rather than reliability to individual
+predictions (molecules). In problems such as drug design, accurately achieving the latter
+would revolutionize decision making. Conformal prediction is a model-agnostic method to
+assign reliability to each model prediction. In this study, we investigated the impact of
+conformal prediction on the prediction of inhibitory activity of molecules on a given cancer
+cell line. This analysis was carried out in each of the 60 cell lines from the NCI-60 panel
+to understand the variability of the results across cancer types. We also discussed the implications of predicting the molecules considered most potent. In addition, we investigated
+how the further subdivision of the training set to build conformal prediction models may
+affect the results obtained. Overall, we observed that those molecules deemed most reliable
+by conformal prediction are substantially better predicted than those that are not. This suggest that such computational tools are promising to guide phenotypic drug design.
+}
+}
+
+% 3 - 2
+%20 pages
+@InProceedings{khatri22,
+title = {Uncertainty Estimation for Single-cell Label Transfer},
+author = {Khatri, Robin and Bonn, Stefan},
+pages = {109--128},
+abstract = {Single-cell gene expression matrices require a cell type label for each cell for downstream analysis. A cell type label refers to a heterogeneous group to which a cell belongs. Machine learning algorithms that aim to automate the assignment of cell type labels train on reference datasets for which cell type labels are already defined. However, these methods are prone to error due to possible preprocessing errors and the dynamic nature of cellular states. Therefore, it is essential to measure the uncertainty associated with classifications.  Here, we hypothesize that conformal prediction may provide a principled approach for this. We examine inductive conformal classifiers (ICPs) on the task of single-cell label transfer. ICPs lead to well-calibrated models that quantify uncertainties well. Results are motivating, and the uncertainties are intuitive and easy to interpret. We also consider a confidence-credibility conformal predictions setup that accurately predicts single labels with the desired error level. Such a model can also reject the classification of cell types unobserved in the reference dataset. However, the presence of unknown cell types violates the underlying assumption of a conformal predictor and is highly dependent on the quality of batch correction. We envision more work in detecting unknown cell types and using conformal predictions to evaluate batch correction methods. }
+}
+
+
+
+% 3 - 3
+%20 pages
+@InProceedings{ashby22,
+title = {Cough-based COVID-19 detection with audio quality clustering and confidence measure based learning},
+author = { Ashby, Alice E. and  Meister, Julia A. and An Nguyen, Khuong and Luo,  Zhiyuan and Gentzke, Werner },
+pages = {129--148},
+abstract = {
+COVID-19 cough classification has rapidly become a promising research avenue as an accessible and low-cost screening alternative, needing only a smartphone to collect and process
+cough samples. However, audio processing of recordings collected in uncontrolled environments and prediction confidence are key challenges that need to be addressed before
+cough-screening could be widely accepted as a trusted testing method. Therefore, we propose a novel approach for cough event detection that identifies {\it cough clusters} instead of
+individual coughs, significantly reducing onset detection's usual hypersensitivity to energy
+fluctuations between cough phases. By using this technique to improve training sample
+quality and quantity by +200\%, we improve Machine Learning performance on the minority COVID-19 class by up to 20\%, achieving up to +47\% precision and +15\% recall
+compared to the dataset baseline. We propose a novel, class-agnostic Conformal Prediction
+non-conformity measure which takes the cough sample quality into account to counteract
+the variance caused by limiting segmentation to just the training set. Our Conformal Prediction model introduces uncertainty quantification to COVID-19 cough classification and
+achieves an additional 34\% improvement to precision and recall.}
+}
+
+
+% 3 - 4
+%20 pages
+@InProceedings{al-baghdadi22,
+title = {Online Portfolio Hedging with the Weak Aggregating Algorithm},
+author = {Al-Baghdadi, Najim and Kalnishkan, Yuri and Lindsay, David and Lindsay, Si\^{a}n },
+pages = {149--168},
+abstract = {In this paper we apply the Weak Aggregating Algorithm to find optimal risk management
+strategies for financial Market Makers (MMs). Here risk is caused by the market exposure.
+It is effectively represented by the MM's overall net {\it position}, which is the aggregation of all
+the {\it buy} and {\it sell} trades carried out by the MM�s clients at a given point in time. So-called
+{\it hedging} strategies are used by MMs to manage their risk and reduce market exposure. In
+essence, the MM actively places trades in order to reduce its overall net position, keeping
+it within some predefined bounds and as neutral (or flat) as possible. A flatter net position
+allows the MM to counter any unfavourable price movements which could otherwise incur a
+significant loss. We apply the Weak Aggregating Algorithm (WAA) to hedging strategies,
+which are treated as the experts. We combine their hedging decisions with the goal of
+reducing portfolio risk and maximising profitability, whilst also attempting to smooth out
+significant drawdowns. We develop a variation of the WAA using discounting and evaluate
+the WAA on a subset of real life client risk data in three commonly traded Foreign Exchange
+(FX) currency symbols: EUR/USD, EUR/GBP and GBP/USD. The results show how
+varying loss parameters and application of discount factors can enable the WAA to give
+combinations of hedging strategies that can significantly improve profitability and reduce
+drawdowns as compared to the benchmark of not hedging.}
+}
+
+
+% 3 - 5
+%19 pages
+@InProceedings{mendil22,
+title = {Robust Gas Demand Forecasting With Conformal Prediction},
+author = {Mendil, Mouhcine and  Mossina, Luca and Nabhan, Marc and Pasini, Kevin },
+pages = {169--187},
+abstract = { Predicting the future trends of customer gas demand as precisely
+as possible is vital for securing the supply chain from production to distribution.
+The operations at Air Liquide
+require the predictions of a Machine Learning forecaster to be coupled with rigorous
+Uncertainty Quantification (UQ), building trustworthy and informative prediction intervals.
+To address these industrial needs, we propose to apply Conformal Prediction (CP), a
+framework that can provide probabilistic guarantees for any underlying predictive model.
+The problem is formulated as time series forecasting, which may counter the CP hypothesis
+of data exchangeability. Nevertheless, our experiments show that CP methods
+enhance the predictive coverage of the tested UQ approaches. We also test EnbPI, a conformal
+method designed specifically for time series, and propose a locally adaptive variant.
+To carry out our experiments with prediction intervals using multiple regression models, we
+introduce our new python library PUNCC and a novel dataset (around 10k observations)
+provided by Air Liquide which leverages over 7 years of data of weekly gas consumption.}
+}
+
+
+
+% 3 - 6
+%19 pages
+@InProceedings{xi22,
+title = {Conformal prediction for hypersonic flight vehicle classification},
+author = {Xi, Zepu and Zhuang, Xuebin and Chen, Hongbo },
+pages = {118--206},
+abstract = {This paper introduces a probabilistic guaranteed prediction method for trajectory data
+of the hypersonic flight vehicle classification problem. This paper devoted two problems:
+(1) hypersonic flight vehicle trajectory classification algorithm using functional data analysis method, and (2) a distributions-free uncertainty quantity for the classification results
+applying conformal prediction methodology. Our approach provides explicit finite-sample
+guarantees for any data set by using functional data analysis methods, which map the
+original data into feature space. The distribution-free uncertainty quantity results for the
+label of new objects include two indications, such as confidence and credibility respectively.
+Lastly, the proposed method aims to communicate instance-wise uncertainty under the
+probabilistic guaranteed and generate a prediction set at a user-specified confidence level
+for the hypersonic flight vehicle classification problem. }
+}
+
+
+%% GROUP 4 Conformal prediction and uncertainty quantification - 6 papers %%
+% 4  - 1
+% 12 pages
+@InProceedings{vovk22,
+title = {Conformal testing: binary case with Markov alternatives},
+author = {Vovk, Vladimir and Nouretdinov, Ilia and Gammerman, Alex},
+pages = {207--218},
+abstract = {We continue study of conformal testing in binary model situations. In this paper we consider
+Markov alternatives to the null hypothesis of exchangeability. We propose two new classes
+of conformal test martingales; one class is statistically efficient in our experiments, and
+the other class partially sacrifices statistical efficiency to gain simplicity and computational
+efficiency.  }
+}
+
+
+% 4 - 2
+%20 pages
+@InProceedings{eliades22,
+title = {A Betting Function for addressing Concept Drift with Conformal Martingales},
+author = {Eliades, Charalambos and Papadopoulos, Harris },
+pages = {219--238},
+abstract = {An important issue that appears when using Conformal Martingales (CM) for detecting
+Concept Drift (CD), is that martingale values get very close to zero when the data generating mechanism remains the same for a large number of instances. In such cases, the
+martingale takes a long time to recover, resulting in detection delays or even totally failing
+to detect the occurrence of a CD. To address this issue we propose a new betting function
+we call Cautious, that avoids betting when there is no evidence that any change is taking
+place, therefore preventing the continuous reduction of the martingale value. The proposed
+betting function can be built on top of any existing betting function to mitigate the aforementioned problem. In this work, we combine it with the kernel and histogram betting
+functions and compare its performance with that of the two original betting functions as
+well as that of existing methods for addressing CD on five datasets.  }
+}
+
+
+% 4 - 3
+%14 pages
+@InProceedings{nouretdinov22a,
+title = {On efficiency of Learning Under Privileged Information},
+author = {Nouretdinov, Ilia},
+pages = {239--252},
+abstract = {The paradigm of Learning Under Privileged Information (LUPI) was used in various practical applications, including its combination with Conformal Prediction (CP) framework.
+In this note, we discuss possible sources and limitations of its efficiency. We try to argue
+that accuracy improvement coming from using privileged information is not occasional.
+For this goal, we consider some minimalistic models of LUPI where the contribution of the
+privileged information appears in its noise-free essence. Then, we discuss connection of
+LUPI paradigm and CP framework in relation with the models.}
+}
+
+
+
+% 4 - 4
+% 20 pages
+@InProceedings{kirstein22,
+title = {Tensor-Train Kernel Learning for Gaussian Processes},
+author = {Kirstein, Max and Sommer, David and Eigel, Martin },
+pages = {253--272},
+abstract = {We propose a new kernel learning approach based on efficient low-rank tensor compression
+for Gaussian process (GP) regression. The central idea is to compose a low-rank function
+represented in a hierarchical tensor format with a GP covariance function. Compared to
+similar deep neural network architectures, this approach facilitates to learn significantly more
+expressive features at lower computational costs as illustrated in the examples. Additionally,
+over-fitting is avoided with this compositional model by taking advantage of its inherent
+regularisation properties. Estimates of the generalisation error are compared to five baseline
+models on three synthetic and six real-world data sets. The experimental results show
+that the incorporated tensor network enables a highly accurate GP regression with a
+comparatively low number of trainable parameters. The observed performance is clearly
+superior (usually by an order of magnitude in mean squared error) to all examined standard
+models, in particular to deep neural networks with more than 1000 times as many parameters. }
+}
+
+% 4 - 5
+%21 pages
+@InProceedings{zhao22,
+title = {Pruning neural networks for inductive conformal prediction},
+author = {Zhao, Xindi and Bellotti, Anthony },
+pages = {273--293},
+abstract = {Neural network pruning techniques are used to prune redundant parameters in overparameterized neural networks in order to compress the model size and reduce computational
+cost. The goal is to prune a neural network in such a way that it has the same, or nearly
+the same, predictive performance as the original. In this paper we study neural network
+pruning in the context of conformal prediction. In order to explore whether the neural
+network can be pruned while maintaining the predictive efficiency of conformal predictors, our work measures and compares the efficiency of the prediction sets provided by the inductive conformal predictor built with an underlying pruned neural network. We implement several existing pruning methods and propose a new pruning method based specifically on
+the conformal prediction framework. By evaluating with various neural network architectures and across several data sets, we find that the pruned network can maintain, or indeed
+improve, the efficiency of the conformal predictors up to a particular pruning ratio and this
+pruning ratio varies with different architectures and data sets. These results are instructive
+for deploying pruned neural network in real-work applications within the context of conformal predictors, where reliable predictions and reduced computational cost are relevant,
+e.g. in healthcare or safety-critical applications. This work is also relevant for further work
+applying continual learning techniques in the context of conformal predictors. }
+}
+
+
+% 4 - 6
+% 13 pages
+@InProceedings{messoudi22,
+title = {Ellipsoidal conformal inference for Multi-Target Regression},
+author = { Messoudi, Soundouss and Destercke, S\'{e}bastien and Rousseau, Sylvain },
+pages = {294--306},
+abstract = {Quantifying the uncertainty of a predictive model output is of essential importance in learning
+scenarios involving critical applications. As the learning task becomes more complex, so does
+uncertainty quantification. In this paper, we consider the task of multi-target regression and propose
+a method to output ellipsoidal confidence regions whose shapes are tailored to each instance to
+predict. We also guarantee that those confidence regions are well-calibrated, i.e., that they cover
+the ground truth with a specified probability. To achieve such a feat, we propose a conformal
+prediction method outputting ellipsoidal prediction regions. Experiments on both simulated and
+real-world data sets show that our methods outperform existing ones.  }
+}
+
+%% 5 POSTERS with extended abstracts %%
+% 5 - 1
+%3 pages
+@InProceedings{nouretdinov22b,
+title = { Prediction of Energy Consumption with Inductive Venn-Abers Predictive Distribution},
+author = {Nouretdinov, Ilia and Gammerman, James },
+pages = {307--309},
+}
+
+% 5 - 2
+%3 pages
+@InProceedings{riquelme-granada22,
+title = {Communication-efficient Conformal Prediction for Distributed Datasets},
+author = {Riquelme-Granada, Nery and Luo, Zhiyuan and An Nguyen, Khuong},
+pages = {310--312},
+}
+
+% 5 - 3
+%3 pages
+@InProceedings{hjort22,
+title = {House Price Prediction with Confidence: Empirical Results from the Norwegian Market},
+author = {Hjort, Anders },
+pages = {313--315},
+abstract = {
+Automated Valuation Models are statistical models used by banks and other financial institutions to estimate the price of a dwelling, typically motivated by financial risk management
+purposes. The preferred choice of model for this task is often tree based machine learning
+models such as gradient boosted trees or random forest, where uncertainty quantification
+is a major challenge. In this empirical contribution, we compare split conformal inference,
+conformalized quantile regression and Mondrian conformalized quantile regression on data
+from the Norwegian housing market, and use random forest as a point prediction. The
+data consists of $N$ = 29 993 transactions from Oslo (Norway) from the time period 2018-2019. The results indicate that the methods using conformalized quantile regression create
+narrower confidence regions than split conformal inference.}
+}
+
+
+% 5 - 4
+%3 pages
+@InProceedings{schlembach22,
+title = {Conformal Multistep-Ahead Multivariate Time-Series Forecasting},
+author = {Schlembach, Filip and Smirnov, Evgueni and Koprinska, Irena },
+pages = {316--318},
+abstract = {This paper proposes a method for conformal multistep-ahead multivariate time-series forecasting. The method minimizes the coverage loss when the data exchangeability assumption
+does not properly hold. This is done by weighting residual quantiles while computing prediction intervals. Preliminary experiments on real data demonstrate the method's utility.}
+}
+
+
+
+% 5 - 5
+%3 pages
+@InProceedings{abdelqader22,
+title = {Conformal Decision Rules},
+author = {Abdelqader, Husam and Smirnov, Evgueni and Pont, Marc and Geijselaers, Marciano },
+pages = {319--321},
+abstract = {This paper proposes conformal decision rules. They are defined as decision rules with their
+own conformal predictors. Given a test instance, conformal decision rules provide a point prediction, an explanation, a p-value for that prediction plus a prediction set.}
+}
+
+
+%% invited talks
+%11 pages
+@InProceedings{destercke22,
+title = {Uncertain data in learning: challenges and opportunities},
+author = {S\'{e}bastien Destercke},
+pages = {322--332},
+abstract = {Dealing with uncertain data in statistical estimation problems or in machine learning is not really
+a new issue. However, such uncertainty has so far mostly been modelled either as sets, being
+called for instance coarse data or partial labels, or as probability distributions over data values,
+being called for instance soft labels. Integrating this uncertainty in the learning process can be
+challenging, but also rewarding, as it can improve both the quality of the made predictions as well as
+our understanding of the obtained model. Within this setting, rich uncertainty models generalizing
+both probabilities and sets offer both new challenges and opportunities, and I will summarise some
+of them in this short note.  }
+}
+
+
+%%17 papers + 5 posters + 1 invited speaker's paper,  332 pages in total %%
